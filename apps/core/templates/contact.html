@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+
+{% block title %}Contact Us | {% endblock %}
+
+{% block content %}
+
+
+        <!-- Contact Start -->
+    <div class="contact">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="contact-info">
+              <h2>Our Store</h2>
+              <h3>
+                <i class="fa fa-map-marker"></i>OldBazaar, Castle Street, Kruje, Durres, Albania
+              </h3>
+              <h3><i class="fa fa-envelope"></i>Oldbazaar@gmail.com</h3>
+              <h3><i class="fa fa-phone"></i>+355684768190</h3>
+              <div class="social">
+                <a href=""><i class="fab fa-twitter"></i></a>
+                <a href=""><i class="fab fa-facebook-f"></i></a>
+                <a href=""><i class="fab fa-linkedin-in"></i></a>
+                <a href=""><i class="fab fa-instagram"></i></a>
+                <a href=""><i class="fab fa-youtube"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="contact-form">
+              <form action="{% url 'contact' %}"method="POST">
+                {% csrf_token %}
+                  <div class="row">
+                  <div class="col-md-6">
+                    <input id="name" name="name" type="text" class="form-control" placeholder="Your Name"/>
+                  </div>
+                  <div class="col-md-6">
+                    <input id="email"
+                           name="email"
+                      type="email"
+                      class="form-control"
+                      placeholder="Your Email"
+                    />
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input id="subject"
+                         name="subject"
+                    type="text"
+                    class="form-control"
+                    placeholder="Subject"
+                  />
+                </div>
+                <div class="form-group">
+                  <textarea id="message"
+                            name="message"
+                    class="form-control"
+                    rows="5"
+                    placeholder="Message"
+                  ></textarea>
+                </div>
+                <div>
+                  <button class="btn" type="submit">Send Message</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="contact-map">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2987.7742908424084!2d19.792600650138727!3d41.50916579629951!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x1351cdda09f4cfdf%3A0x36b57fbfda169b2c!2sPazari%20I%20Vjet%C3%ABr%20I%20Kruj%C3%AB!5e0!3m2!1sen!2s!4v1629931633260!5m2!1sen!2s"
+                frameborder="0"
+                style="border: 0"
+                allowfullscreen=""
+                aria-hidden="false"
+                tabindex="0"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Contact End -->
+
+
+
+{% endblock %}

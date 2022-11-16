@@ -1,0 +1,905 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<style>
+@import url(https://fonts.googleapis.com/css?family=Oswald:300,400,700);
+
+{#        * {#}
+{#  margin: 0;#}
+{#  padding: 0;#}
+{#  font-family: sans-serif;#}
+{#  overflow: hidden;#}
+
+
+.banner1,
+.banner2,
+.banner3,
+.banner4 {
+  height: 100vh;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.banner-img {
+  width: 120%;
+  height: 800px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  animation: zoom-out 6s linear infinite;
+}
+
+@keyframes zoom-out {
+  100% {
+    width: 100%;
+  }
+}
+
+.text-box {
+  width: 800px;
+  position: absolute;
+  top: 400px;
+  left: 447.55px;
+  color: #ffffff;
+  animation: textup 12s linear infinite;
+  transform: translateY(100px);
+    backdrop-filter: blur(3px);
+}
+
+.text-box h1 {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+
+.text-box p {
+  font-size: 25px;
+  line-height: 25px;
+  margin-top: 80px;
+    text-align: center;
+}
+
+.text-box span {
+  background: red;
+  height: 2px;
+  width: 800px;
+  position: absolute;
+  left: 0;
+}
+
+.banner1 {
+  animation: slide1 12s linear infinite;
+    position: relative;
+}
+
+.banner2 {
+  animation: slide2 12s linear infinite;
+}
+
+.banner3 {
+  animation: slide3 12s linear infinite;
+}
+
+.banner4 {
+  animation: slide4 12s linear infinite;
+}
+
+@keyframes slide1 {
+  0% {
+    visibility: visible;
+  }
+  25% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  75% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes slide2 {
+  0% {
+    visibility: hidden;
+  }
+  25% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: visible;
+  }
+  75% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes slide3 {
+  0% {
+    visibility: hidden;
+  }
+  25% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  75% {
+    visibility: visible;
+  }
+  100% {
+    visibility: hidden;
+  }
+}
+
+@keyframes slide4 {
+  0% {
+    visibility: hidden;
+  }
+  25% {
+    visibility: hidden;
+  }
+  50% {
+    visibility: hidden;
+  }
+  75% {
+    visibility: hidden;
+  }
+  100% {
+    visibility: visible;
+  }
+}
+
+@keyframes textup {
+  10% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.text-box1 {
+  animation-delay: 0s;
+}
+
+.text-box2 {
+  animation-delay: 3s;
+}
+
+.text-box3 {
+  animation-delay: 6s;
+}
+
+.text-box4 {
+  animation-delay: 9s;
+}
+
+
+:root {
+  --bc: #efeeee;
+  --white: #ffffff;
+	--black: #000000;
+  --red: #da2c4d;
+	--teal: #20c997;
+	--cyan: #17a2b8;
+	--primary: #f9c6cf;
+	--font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+* {
+	box-sizing: border-box;
+}
+ body {
+	margin: 0;
+  width: 100%;
+  min-height: 100vh;
+	overflow-x: hidden;
+	font-family: var(--font-family-sans-serif);
+  scroll-behavior: smooth;
+	-webkit-font-smoothing: antialiased;
+  background-color: var(--bc);
+}
+/* Classes */
+{#.top {#}
+{#  padding: 2em;#}
+{#  margin: 0 auto;#}
+{#  background-color: white;#}
+{#  text-align: center;#}
+
+{#.title {#}
+{#  color: var(--black);#}
+
+.title h1 {
+  margin: 0;
+  padding: 0;
+  font-size: 35px;
+  font-weight: 400;
+  font-family: 'Oswald', sans-serif;
+  letter-spacing: 8px;
+  text-transform: uppercase;
+}
+.title h3 {
+  font-size: 14px;
+  font-weight: 400;
+  font-family: 'Oswald', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 8px;
+  line-height: 0;
+}
+/* Parallax */
+{#.parallax1 {#}
+{#  position: relative;#}
+{#  background-image: url("https://i.pinimg.com/originals/88/c7/09/88c709b99858d0888ed2a8cfa7b91e3e.jpg");#}
+{#  min-height: 50vh;#}
+{#  background-attachment: fixed;#}
+{#  background-position: center;#}
+{#  background-repeat: no-repeat;#}
+{#  background-size: cover;#}
+
+.parallax2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url("{% static 'staticimages/pazari4.jpg' %}");
+  min-height: 50vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.overlay {
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, .4);
+  position: absolute;
+}
+.parallax2 h2 em {
+    font-style: normal;
+    color: #f33f3f;
+    font-size: 80px;
+}
+.parallax2 h2 {
+  font-size: 5em;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--white);
+  z-index: 1;
+}
+
+.parallax3 h2 em {
+    font-style: normal;
+    color: #f33f3f;
+    font-size: 80px;
+}
+
+.parallax3 h2 {
+  font-size: 5em;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: var(--white);
+  z-index: 1;
+}
+
+.parallax3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-image: url("{% static 'staticimages/pazari6.jpg' %}");
+  min-height: 50vh;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Paragraph */
+.paragraph {
+  margin: 3em 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.paragraph p {
+  width: 60%;
+  font-size: 1.05em;
+  line-height: 1.45em;
+  letter-spacing: .1em;
+  color: rgb(64, 64, 64);
+}
+.first span {
+  font-size: 4em;
+  color: var(--red);
+  float: left;
+  font-weight: 400;
+  line-height: 55px;
+  padding: .05em .2em 0 0;
+}
+.second span {
+  font-size: 4em;
+  color: var(--teal);
+  float: left;
+  font-weight: 400;
+  line-height: 55px;
+  padding: .05em .2em 0 0;
+}
+.third span {
+  font-size: 4em;
+  color: var(--cyan);
+  float: left;
+  font-weight: 400;
+  line-height: 55px;
+  padding: .05em .2em 0 0;
+}
+/* Selection */
+::selection {
+  color: var(--white);
+  background: rgba(161, 181, 201, .8);
+}
+/* SCROLLBAR */
+::-webkit-scrollbar-track {
+      background-color: #F5F5F5;
+}
+::-webkit-scrollbar {
+      width: 12px;
+      background-color: #F5F5F5;
+}
+::-webkit-scrollbar-thumb {
+      background-color: rgba(161, 181, 201, .8);
+}
+
+
+
+
+/**data**/
+{#@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;600&display=swap');#}
+
+body{
+    margin:0;
+  }
+  .mazi-container{
+    width:100vw;
+    height:100%;
+    background: #ffffff;
+    {#background-image:url('./Exports/how-it-works-bg.png');#}
+    background-size:cover;
+    background-position:center center;
+    padding:0;
+  }
+
+  {#.Sec-title{#}
+  {#  max-width:1200px;#}
+  {#  display:flex;#}
+  {#  align-items: center;#}
+  {#  justify-content: center;#}
+  {#  margin:auto;#}
+  {#  font-size: 35px;#}
+  {#  color: #ffffff;#}
+  {#  font-family: 'Rubik', sans-serif;#}
+  {#  font-weight: 600;#}
+
+
+  .mazi-wrapper{
+    max-width:1200px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin:auto;
+  }
+
+  .sec-md-35{
+    width:35%;
+    margin-top: 0;
+  }
+
+  .sec-md-30{
+    width:30%;
+    text-align:center;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -40px;
+    z-index: 3;
+  }
+
+  .cards{
+    position: relative;
+    margin: auto;
+  }
+
+  .cards .card{
+    width:75%;
+    height: 150px;
+    background:#fff;
+    padding:30px;
+    margin-Top: 20px;
+    border-radius: 10px;
+    font-family: 'Rubik', sans-serif;
+    line-height: 24px;
+  }
+
+  .cards .card h2{
+    margin-top: 0;
+  }
+
+  .left-t{
+    margin-left: 15%;
+    opacity: 0;
+    animation: 1s ease-out forwards 1 slideInFromLeft;
+    animation-delay: 1s;
+  }
+
+  .left-b{
+    margin-left: 45%;
+    opacity: 0;
+    animation: 1s ease-out forwards 1 slideInFromLeft;
+    animation-delay: 3s;
+  }
+
+  @keyframes slideInFromLeft{
+    0% {
+      transform: translateX(-100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .right-t{
+    margin-left: -4%;
+    opacity: 0;
+    animation: 1s ease-out forwards 1 slideInFromRight;
+    animation-delay: 2s;
+  }
+
+  .right-b{
+    margin-left: -32%;
+    opacity: 0;
+    animation: 1s ease-out forwards 1 slideInFromRight;
+    animation-delay: 4s;
+  }
+
+  @keyframes slideInFromRight{
+    0% {
+      transform: translateX(100%);
+      opacity: 0;
+    }
+    100% {
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+
+  .all-path{
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 100;
+  }
+
+  .all-path .no1, .all-path .no2, .all-path .no3, .all-path .no4{
+    animation: 4s ease-out forwards 1 draw;
+    opacity: 0;
+  }
+
+  .all-path .no2{
+    animation-delay: 1s;
+  }
+
+  .all-path .no3{
+    animation-delay: 2s;
+  }
+
+  .all-path .no4{
+    animation-delay: 3s;
+  }
+
+
+  @keyframes draw{
+    0% {
+      stroke-dashoffset: 1000;
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+      stroke-dashoffset: 0 ;
+    }
+  }
+
+
+
+  /**kartaat**/
+{#        * {#}
+{#  padding: 0;#}
+{#  margin: 0;#}
+{#  box-sizing: border-box;#}
+
+.container-cards {
+  margin-top: 70px;
+  margin-bottom: 70px;
+  width: 100vw;
+  height: 60vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.block {
+  width: 500px;
+  height: 300px;
+  margin: 20px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 5px 5px 20px 5px #111;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  perspective: 2000px;
+  background-color: #666;
+}
+
+.block--img {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-size: cover;
+  transform: rotateX(0deg);
+  transform-origin: top center;
+  transition: all 300ms ease-out;
+}
+
+.block1 {
+  background-image: url("{% static 'staticimages/pazari5.jpg' %}");
+}
+
+.block2 {
+  background-image: url("{% static 'staticimages/handmadeflags.jpg' %}");
+}
+
+.block3 {
+  background-image: url("{% static 'staticimages/pazari11.jpg' %}");
+}
+
+.block--text {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  padding: 20px;
+  background-color: #000000;
+  color: antiquewhite;
+  transform: rotateX(120deg);
+  transform-origin: bottom center;
+  transition: all 300ms ease-in;
+}
+
+.block:hover .block--text {
+  transform: rotateX(0deg);
+}
+
+.block:hover .block--img {
+  transform: rotateX(-120deg);
+}
+
+.text--head {
+  text-align: center;
+  font-size: 30px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  text-transform: uppercase;
+  color: #ff6f61;
+}
+
+.text--quote {
+  padding: 20px 10px 0;
+  font-size: 18px;
+    text-align: center;
+}
+
+.text--person {
+  position: relative;
+  bottom: -40px;
+  text-align: end;
+  font-weight: 600;
+  color: #ff6f61;
+    text-align: center;
+}
+
+
+
+
+/**1**/
+        /* Reset */
+
+{#* {#}
+{#    padding: 0;#}
+{#    margin: 0;#}
+{#}#}
+
+
+/* BgMove */
+
+{#.bgwrap {#}
+{#    width: 100%;#}
+{#    height: 100vh;#}
+{#    overflow: hidden;#}
+{#    position: relative;#}
+
+
+{#.bgmove {#}
+{#    background: url(http://www.blutour.al/uploads/0000/19/2020/08/04/krujaaa.jpg);#}
+{#    background-size: cover;#}
+{#    background-position: center center;#}
+{#    width: 100%;#}
+{#    height: 100%;#}
+{#    /* remove flicker in webkit */#}
+{#    -webkit-backface-visibility: hidden;#}
+
+
+
+{#/* Extras */#}
+{#.text {#}
+{#    position: absolute;#}
+{#    top: 50%;#}
+{#    left: 50%;#}
+{#    -webkit-transform: translate(-50%, -50%);#}
+{#    -ms-transform: translate(-50%, -50%);#}
+{#    transform: translate(-50%, -50%);#}
+{#    font: bold 60px Arial, sans-serif;#}
+{#    color: #ffffff;#}
+{#    z-index: 1;#}
+{#    text-shadow: 0 0 8px #222;#}
+
+
+{#.text:after {#}
+{#    position: absolute;#}
+{#    left: 0;#}
+{#    bottom: 5px;#}
+{#    z-index: -1;#}
+{#    content: '';#}
+{#    width: 100%;#}
+{#    border-bottom: 5px solid #ff3e3e;#}
+
+
+
+
+/**testimonial-card**/
+        body{
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: sans-serif;
+    background: #ffffff;
+}
+.testimonials{
+    margin: 100px auto 100px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(350px, 1fr));
+    grid-gap: 20px;
+}
+img{
+    width: 200px;
+    height: 200px;
+}
+.testimonials .card{
+    position: relative;
+    width: 450px;
+    height: 400px;
+    margin: 0 auto;
+    background-color: #051108;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+    box-shadow: 0 10px 40px rgba(0,0,0,.5);
+    overflow: hidden;
+}
+.testimonials .card .content
+{
+    z-index: 2;
+    position: relative;
+}
+.testimonials .card .layer{
+    position: absolute;
+    top: calc(100% - 2px);
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#f81839, #090000);
+    z-index: 1;
+    transition: .7s;
+}
+.testimonials .card:hover .layer{
+    top: 0;
+}
+.testimonials .card .content p{
+    font-size: 18px;
+    line-height: 24px;
+    color: #fff;
+}
+.testimonials .card .content .image{
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    border-radius: 5%;
+    overflow: hidden;
+    border: 2px solid #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+.testimonials .card .content .details h2{
+    font-size: 18px;
+    color: #fff;
+}
+.testimonials .card .content .details h2 span{
+    color: #03a9f4;
+    font-size: 14px;
+    transition: .7s;
+}
+.testimonials .card:hover .content .details h2 span{
+    color: #fff;
+}
+
+    </style>
+
+
+<div class="page">
+
+    <div class="banners">
+    <!-- First slide -->
+    <div class="banner1">
+      <img class="banner-img"
+        src="{% static 'staticimages/pazari2.jpg' %}"
+      />
+      <div class="text-box text-box1">
+        <h1>Kruja's Old Bazaar</h1>
+        <span></span>
+        <p>
+          The Kruja Bazaar is one of the oldest in Albania.
+        </p>
+      </div>
+    </div>
+
+    <!-- Second slide -->
+    <div class="banner2">
+      <img class="banner-img"
+        src="{% static 'staticimages/pazaripamjasiper.jpg' %}"
+      />
+      <div class="text-box text-box2">
+        <h1>Where is it located?</h1>
+        <span></span>
+        <p>
+          Conveniently located on the main road leading to the Castle of Kruja, the space forms part of the museum while also serving its traditional commercial purpose.
+        </p>
+      </div>
+    </div>
+
+    <!-- Third slide -->
+    <div class="banner3">
+      <img class="banner-img"
+        src="{% static 'staticimages/pazari3.jpg' %}"
+      />
+      <div class="text-box text-box3">
+        <h1>When is it build?</h1>
+        <span></span>
+        <p>
+          The construction of the beautiful and fascinating marketplace of Krujë dates back over 400 years, and was the starting point of free trade among the city’s most established merchants.
+        </p>
+      </div>
+    </div>
+
+    <!-- Fourth slide -->
+    <div class="banner4">
+      <img class="banner-img"
+        src="{% static 'staticimages/pazari1.jpg' %}"
+      />
+      <div class="text-box text-box4">
+        <h1>What will you find here?</h1>
+        <span></span>
+        <p>
+            Whether you need a traditionally-crafted rug, or masterfully-made copper products from the renowned craftsmen who work here, you can find every object of interest you might need! Other items in the fascinating bazaar include genuine handcrafted items, and silver jewellery that is known to last a lifetime.
+        </p>
+      </div>
+    </div>
+</div>
+    <div class="cards">
+
+        <!--testimonials-cards-->
+        <div class="container-cards">
+            <div class="block">
+                <div class="block--img block1"></div>
+                <div class="block--text">
+                <div class="text--head">Who are we?</div>
+                <div class="text--quote">We are the first online store and community of Kruja's Old Bazaar Sellers.</div>
+                <div class="text--person">Legitimate Store</div>
+            </div>
+        </div>
+
+  <div class="block">
+    <div class="block--img block2"></div>
+    <div class="block--text">
+      <div class="text--head">What we sell?</div>
+      <div class="text--quote">Our products are 100% authentic , taken directly from Kruja's Bazaar Shops. </div>
+      <div class="text--person">Guaranteed Products </div>
+    </div>
+  </div>
+
+  <div class="block">
+    <div class="block--img block3"></div>
+    <div class="block--text">
+      <div class="text--head">Worldwide Shipping</div>
+      <div class="text--quote">Enjoy Albanian culture anywhere you are.</div>
+      <div class="text--person">Free Shipping</div>
+    </div>
+  </div>
+</div>
+
+        <div class="parallax2">
+    <div class="overlay"></div>
+    <h2>Old<em>Bazaar</em></h2>
+  </div>
+
+        <!--data-->
+        <div class="testimonials">
+
+        <div class="card">
+            <div class="layer"></div>
+            <div class="content">
+                <p>Would you like to see our products?</p>
+                <div class="image">
+                    <img src="{% static 'staticimages/pazari9.jpg' %}">
+                </div>
+                <div class="details">
+                    <a href="{% url 'productlist' %}"><button style="margin-top: 30px" type="button" class="btn  btn-light"><i class="fa fa-shopping-cart"></i> View Products</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="layer"></div>
+            <div class="content">
+                <p>Would you like to be a member?</p>
+                <div class="image">
+                    <img src="{% static 'staticimages/pazari5.jpg' %}">
+                </div>
+                <div class="details">
+                    <a href="{% url 'registerUser' %}"><button style="margin-top: 30px" type="button" class="btn  btn-light"><i class="fas fa-user-plus"></i
+                > Sign Up</button></a>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="layer"></div>
+            <div class="content">
+                <p>Have you got any questions?</p>
+                <div class="image">
+                    <img src="{% static 'staticimages/pazari10.jpg' %}">
+                </div>
+                <div class="details">
+                    <a href="{% url 'contact' %}"><button style="margin-top: 30px" type="button" class="btn  btn-light"><i class="fas fa-envelope-open-text"></i> Contact Us</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        <div class="parallax3">
+      <div class="overlay"></div>
+    <h2>Online<em>Store</em></h2>
+  </div>
+
+    </div>
+</div>
+{% endblock %}
